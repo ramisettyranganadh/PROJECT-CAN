@@ -1,21 +1,3 @@
-; PlatformIO Project Configuration File
-;
-;   Build options: build flags, source filter
-;   Upload options: custom upload port, speed and extra flags
-;   Library options: dependencies, extra library storages
-;   Advanced options: extra scripting
-;
-; Please visit documentation for the other options and examples
-; https://docs.platformio.org/page/projectconf.html
-
-[env:uno]
-platform = atmelavr
-board = uno
-framework = arduino
-lib_deps = 
-    autowp/MCP2515@^1.2.1
-    arduino-libraries/SPI
-
 #include <mcp2515.h>
 #include <SPI.h>
 
