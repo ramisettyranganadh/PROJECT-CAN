@@ -50,13 +50,15 @@ void loop(void)
 {
   // put your main code here, to run repeatedly:
   
+  /* read the message from the bus using RX buffer 0x1FEDCBA1. */
   if (CAN2515.readMessage(&Message1) == MCP2515::ERROR_OK) 
   {
       // frame contains received message
+      Serial.println("MESSAGE 1 RECEIVED");
   }
   
   /* send out the message to the bus using second TX buffer and
-  tell other devices this is a extended frame from 0x12345678. */
+  tell other devices this is a extended frame from 0x1FEDCBA2. */
   CAN2515.sendMessage(MCP2515::TXB1, &Message2);
   
   Serial.println("MESSAGE 2 SENT");
